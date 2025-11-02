@@ -1,0 +1,154 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Simple Home — My Site</title>
+    <meta name="description" content="A simple, responsive homepage template." />
+    <style>
+        :root{
+            --bg:#f6f8fb; --card:#fff; --accent:#2563eb; --muted:#6b7280;
+            --radius:12px; --max-width:1100px; font-family:system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial;
+        }
+        *{box-sizing:border-box}
+        html,body{height:100%}
+        body{
+            margin:0; background:linear-gradient(180deg,var(--bg),#fff 60%);
+            color:#0f172a; -webkit-font-smoothing:antialiased; -moz-osx-font-smoothing:grayscale;
+            line-height:1.4;
+            display:flex; align-items:flex-start; justify-content:center;
+            padding:40px 20px;
+        }
+        .container{width:100%;max-width:var(--max-width);}
+        header{
+            display:flex; align-items:center; justify-content:space-between;
+            gap:16px; margin-bottom:32px;
+        }
+        .brand{display:flex;align-items:center;gap:12px;text-decoration:none;color:inherit}
+        .logo{
+            width:48px;height:48px;background:linear-gradient(135deg,var(--accent),#7c3aed);
+            border-radius:10px;display:grid;place-items:center;color:white;font-weight:700;font-size:18px;
+            box-shadow:0 6px 18px rgba(37,99,235,0.18);
+        }
+        nav{display:flex;gap:12px;align-items:center}
+        .nav-link{color:var(--muted);text-decoration:none;padding:8px 12px;border-radius:8px}
+        .nav-link:hover{background:rgba(15,23,42,0.04);color:var(--accent)}
+        .hero{
+            background:var(--card); border-radius:var(--radius); padding:36px; box-shadow:0 6px 30px rgba(2,6,23,0.06);
+            display:grid; grid-template-columns:1fr 340px; gap:28px; align-items:center;
+        }
+        .title{font-size:28px;margin:0 0 12px}
+        .lead{margin:0 0 20px;color:var(--muted)}
+        .cta{display:inline-block;padding:10px 16px;background:var(--accent);color:#fff;border-radius:10px;text-decoration:none;font-weight:600}
+        .card{background:linear-gradient(180deg,#fff,#fbfdff);border-radius:12px;padding:18px;box-shadow:0 4px 20px rgba(2,6,23,0.04)}
+        .features{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:18px}
+        .feature{background:transparent;padding:12px;border-radius:10px}
+        .feature h4{margin:0 0 6px;font-size:15px}
+        .feature p{margin:0;color:var(--muted);font-size:13px}
+        footer{margin-top:22px;color:var(--muted);font-size:13px;text-align:center}
+        /* responsive */
+        @media (max-width:880px){
+            .hero{grid-template-columns:1fr; padding:20px}
+            .features{grid-template-columns:repeat(2,1fr)}
+        }
+        @media (max-width:520px){
+            header{flex-direction:column;align-items:flex-start}
+            .features{grid-template-columns:1fr}
+            .logo{width:40px;height:40px;font-size:16px}
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <a class="brand" href="#">
+                <div class="logo" aria-hidden="true">MS</div>
+                <div>
+                    <strong>My Site</strong><div style="font-size:12px;color:var(--muted)">Simple homepage</div>
+                </div>
+            </a>
+            <nav aria-label="Primary navigation">
+                <a class="nav-link" href="#features">Features</a>
+                <a class="nav-link" href="#about">About</a>
+                <a class="nav-link" href="#contact">Contact</a>
+            </nav>
+        </header>
+
+        <main>
+            <section class="hero" role="region" aria-labelledby="home-title">
+                <div>
+                    <h1 id="home-title" class="title">Build something simple and beautiful</h1>
+                    <p class="lead">A minimal, responsive starting point for landing pages and small projects. Clean markup, accessible layout, and no build step required.</p>
+                    <p>
+                        <a class="cta" href="#features">Get started</a>
+                        <a class="nav-link" href="#about" style="margin-left:8px">Learn more</a>
+                    </p>
+
+                    <div id="features" class="card" aria-label="Key features">
+                        <div class="features">
+                            <div class="feature">
+                                <h4>Responsive</h4>
+                                <p>Works on all screen sizes with a simple, fluid layout.</p>
+                            </div>
+                            <div class="feature">
+                                <h4>Accessible</h4>
+                                <p>Semantic HTML and focus-friendly controls for better usability.</p>
+                            </div>
+                            <div class="feature">
+                                <h4>Lightweight</h4>
+                                <p>No frameworks required — drop this file into your project and go.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <aside class="card" aria-labelledby="aside-title">
+                    <h3 id="aside-title" style="margin-top:0">Quick info</h3>
+                    <p style="color:var(--muted);margin-bottom:12px">Use this as a template to start your homepage. Replace text, colors, and images to match your brand.</p>
+                    <ul style="padding-left:18px;margin:0;color:var(--muted);font-size:14px">
+                        <li>HTML-only, single file</li>
+                        <li>Responsive layout</li>
+                        <li>Easy to customize</li>
+                    </ul>
+                </aside>
+            </section>
+
+            <section id="about" style="margin-top:20px">
+                <div class="card">
+                    <h3 style="margin-top:0">About this template</h3>
+                    <p style="color:var(--muted);margin:0">This small template provides a solid starting point for a homepage — semantic structure, modest styling, and responsive behavior without external dependencies.</p>
+                </div>
+            </section>
+
+            <section id="contact" style="margin-top:18px">
+                <div class="card">
+                    <h3 style="margin-top:0">Contact</h3>
+                    <form style="display:flex;flex-direction:column;gap:8px;margin-top:8px" onsubmit="event.preventDefault();alert('Thanks!');">
+                        <label style="font-size:13px;color:var(--muted)">
+                            Email
+                            <input type="email" required placeholder="you@example.com" style="width:100%;padding:10px;border-radius:8px;border:1px solid #e6eef8;margin-top:6px">
+                        </label>
+                        <label style="font-size:13px;color:var(--muted)">
+                            Message
+                            <textarea required rows="3" placeholder="Say hello…" style="width:100%;padding:10px;border-radius:8px;border:1px solid #e6eef8;margin-top:6px"></textarea>
+                        </label>
+                        <div style="display:flex;gap:8px">
+                            <button type="submit" class="cta" style="border:none;cursor:pointer">Send</button>
+                            <button type="reset" class="nav-link" style="border:none;cursor:pointer">Reset</button>
+                        </div>
+                    </form>
+                </div>
+            </section>
+        </main>
+
+        <footer>
+            © <span id="year"></span> My Site — Built with simple HTML.
+        </footer>
+    </div>
+
+    <script>
+        // small script to update year and support future enhancements
+        document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
+</body>
+</html>
